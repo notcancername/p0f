@@ -215,6 +215,10 @@ sig   = 16436
 label = s:unix:Linux:3.11 and newer
 sig   = *:64:0:*:mss*20,10:mss,sok,ts,nop,ws:df,id+:0
 sig   = *:64:0:*:mss*20,7:mss,sok,ts,nop,ws:df,id+:0
+;; From Linux 6.12.11, net.ipv4.tcp_timestamps=1
+sig   = *:64:0:*:mss*45,7:mss,nop,nop,ts,nop,ws:flow:0
+;; From Linux 6.12.11, net.ipv4.tcp_timestamps=0
+sig   = *:64:0:*:mss*45,7:mss,nop,ws:flow:0
 
 label = s:unix:Linux:3.1-3.10
 sig   = *:64:0:*:mss*10,4:mss,sok,ts,nop,ws:df,id+:0
